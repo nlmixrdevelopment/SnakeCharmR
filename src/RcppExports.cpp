@@ -35,7 +35,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // rcpp_Py_get_var
-RawVector rcpp_Py_get_var(String varname);
+String rcpp_Py_get_var(String varname);
 RcppExport SEXP _SnakeCharmR_rcpp_Py_get_var(SEXP varnameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -44,17 +44,4 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(rcpp_Py_get_var(varname));
     return rcpp_result_gen;
 END_RCPP
-}
-
-static const R_CallMethodDef CallEntries[] = {
-    {"_SnakeCharmR_rcpp_Py_Initialize", (DL_FUNC) &_SnakeCharmR_rcpp_Py_Initialize, 0},
-    {"_SnakeCharmR_rcpp_Py_Finalize", (DL_FUNC) &_SnakeCharmR_rcpp_Py_Finalize, 0},
-    {"_SnakeCharmR_rcpp_Py_run_code", (DL_FUNC) &_SnakeCharmR_rcpp_Py_run_code, 1},
-    {"_SnakeCharmR_rcpp_Py_get_var", (DL_FUNC) &_SnakeCharmR_rcpp_Py_get_var, 1},
-    {NULL, NULL, 0}
-};
-
-RcppExport void R_init_SnakeCharmR(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
 }
