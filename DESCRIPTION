@@ -16,6 +16,7 @@ SystemRequirements: Python (>= 2.7) and Python headers and libraries
     (See the INSTALL file)
 URL: https://github.com/asieira/SnakeCharmR
 BugReports: https://github.com/asieira/SnakeCharmR/issues
+Biarch: true
 Suggests:
     testthat (>= 1.0.0)
 LinkingTo: Rcpp
